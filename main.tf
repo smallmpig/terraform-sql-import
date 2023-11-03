@@ -29,6 +29,7 @@ resource "random_password" "user" {
 }
 
 resource "google_sql_user" "sql_user" {
+  project = var.project_id
   name     = "mypostgre"
   instance = google_sql_database_instance.postgre_sql.name
   password = random_password.user.result
