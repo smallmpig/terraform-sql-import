@@ -13,7 +13,7 @@ data google_sql_database_instance postgre_sql {
 
 resource "google_sql_database" "cloud_database" {
     name = "my_db"
-    instance = google_sql_database_instance.postgre_sql.name
+    instance = data.google_sql_database_instance.postgre_sql.name
     project = var.project_id
 }
 
@@ -26,7 +26,7 @@ resource "random_password" "user" {
 resource "google_sql_user" "sql_user" {
   project = var.project_id
   name     = "mypostgre"
-  instance = google_sql_database_instance.postgre_sql.name
+  instance = data.google_sql_database_instance.postgre_sql.name
   password = random_password.user.result
 }
 
