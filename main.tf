@@ -7,6 +7,12 @@ import {
 }
 
 resource google_sql_database_instance postgre_sql {
+  database_version = "POSTGRES_15"
+  project = "peppy-ward-398202"
+  name = "raven-test"
+  clone {
+    source_instance_name = "raven-test"
+  }
 
 }
 
