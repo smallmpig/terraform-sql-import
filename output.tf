@@ -3,7 +3,7 @@ output "sql_user" {
 }
 
 output "sql_password" {
-    sensitive = false
+    sensitive = true
     value = google_sql_user.sql_user.password
 }
 
