@@ -1,10 +1,10 @@
-# import {
-# # Provider-defined resource ID of the cloud resource to be imported
-#   id = "projects/peppy-ward-398202/instances/raven-test"
+import {
+# Provider-defined resource ID of the cloud resource to be imported
+  id = "projects/peppy-ward-398202/instances/raven-test"
 
-#   # Terraform resource address to be created
-#   to = google_sql_database_instance.postgre_sql
-# }
+  # Terraform resource address to be created
+  to = google_sql_database_instance.postgre_sql
+}
 
 data google_sql_database_instance postgre_sql {
   name = "raven-test"
